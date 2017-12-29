@@ -36,6 +36,16 @@ module.exports = ( api, request ) => {
 		} );
 	};
 
+	api.card.move = ( cardIds, destination ) => {
+		return request( {
+			url: `/io/card/move`,
+			method: "post",
+			data: {
+				cardIds, destination
+			}
+		} );
+	};
+
 	api.card.destroy = cardId => {
 		return request( {
 			url: `/io/card/${ cardId }`,

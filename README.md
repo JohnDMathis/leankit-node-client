@@ -290,6 +290,7 @@ Replace `{your-account}` in the URL with the name of your LeanKit account.
 |:---|:---|:---|
 |`.board.list( { params } )`|`GET /io/board`|Get a list of boards the authenticated user has access to. `params` may include search and paging options. Refer to the API documentation for details.|
 |`.board.get( boardId )`|`GET /io/board/$boardId`|Get a specific board.|
+|`.board.changes( boardId, version )`|`GET /io/board/$boardId/changes?version=$version`|EXPERIMENTAL! Get changes on a board since specified version. Refer to the API documentation for details.|
 |`.board.create( { boardCreateRequest } )`|`POST /io/board/`|Create a new board based on a template or existing board. Refer to the API documentation for details.|
 |`.board.customFields.list( boardId )`|`GET /io/board/$boardId/customfield`|Get a list of custom fields configured for the given board ID.|
 |`.board.customFields.update( boardId, [ { operations } ] )`|`PATCH /io/board/$boardId/customfield`|Modify the custom fields for the given board ID. The array of operations can include adding, replacing, or removing custom fields. Refer to the API documentation for details.|
@@ -310,6 +311,7 @@ Replace `{your-account}` in the URL with the name of your LeanKit account.
 |`.card.get( cardId )`|`GET /io/card/$cardId`|Get a specific card by its ID.|
 |`.card.create( { cardCreateRequest } )`|`POST /io/card`|Creates a new card. Refer to the API documentation for details.|
 |`.card.update( cardId, [ { operations } ] )`|`PATCH /io/card/$cardId`|Modify properties of the given card ID. The array of operations can include adding, replacing, or removing property values. Refer to the API documentation for details.|
+|`.card.move( cardIds, destination )`|`POST /io/card/move`|EXPERIMENTAL! Move a card or set of cards to various destinations. See API documentation for details.|
 |`.card.destroy( cardId )`|`DELETE /io/card/$cardId`|Delete the specified card.|
 |`.card.comment.list( cardId )`|`GET /io/card/$cardId/comment`|Get a list of card comments.|
 |`.card.comment.create( cardId, text )`|`POST /io/card/$cardId/comment`|Add a new comment to the given card.|
